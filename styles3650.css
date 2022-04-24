@@ -1,0 +1,22 @@
+.main-content{
+    padding-top: 10em;
+}
+.center-content{
+    text-align: center;
+}
+.start{
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  margin-top: 2em;
+  padding-left: 3em !important;
+  padding-right: 3em !important;
+}
+.main-cards{
+    margin:2em;
+}
+.second-page{
+    margin-top: 5em;
+}
