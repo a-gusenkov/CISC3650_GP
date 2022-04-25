@@ -1,10 +1,10 @@
-.main-content{
-    padding-top: 10em;
+.main-content {
+  padding-top: 10em;
 }
-.center-content{
-    text-align: center;
+.center-content {
+  text-align: center;
 }
-.start{
+.start {
   margin: 0;
   position: absolute;
   left: 50%;
@@ -14,9 +14,48 @@
   padding-left: 3em !important;
   padding-right: 3em !important;
 }
-.main-cards{
-    margin:2em;
+.second-page {
+  margin-top: 5em;
 }
-.second-page{
-    margin-top: 5em;
+
+.img-container {
+  width: 100%;
+  height: 200px;
 }
+
+.img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #333;
+}
+
+.img-container:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+/* 
+.online {
+  width: 100%;
+  height: 100%;
+} */
