@@ -38,7 +38,8 @@
                                 <a href="library.html" class="btn btn-primary ">Visit Library</a>
                             </div>
 
-                            <div class="col text-right align-self-center">
+                            <div class="col text-right align-self-center" data-toggle="popover"
+                                data-content="Ben, Elon, Joe, ..." title="Online" style="cursor: pointer">
                                 <p class="m-0">5 <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"
                                         fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                         <path
@@ -63,7 +64,8 @@
                                 <a href="#" class="btn btn-primary ">Visit Boylan Hall</a>
                             </div>
 
-                            <div class="col text-right align-self-center">
+                            <div class="col text-right align-self-center" data-toggle="popover"
+                                data-content="John, Alex, Mary, ..." title="Online" style="cursor: pointer">
                                 <p class="m-0">10 <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"
                                         fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                         <path
@@ -90,6 +92,11 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
 
 </body>
 
