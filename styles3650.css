@@ -1,10 +1,15 @@
-.main-content {
-  padding-top: 10em;
+body{
+    background-color: #f0f7fa !important;
 }
-.center-content {
-  text-align: center;
+.main-content{
+
+    padding-top: 10em;
+    
 }
-.start {
+.center-content{
+    text-align: center;
+}
+.start{
   margin: 0;
   position: absolute;
   left: 50%;
@@ -14,45 +19,110 @@
   padding-left: 3em !important;
   padding-right: 3em !important;
 }
-.second-page {
-  margin-top: 5em;
+.main-cards{
+    margin:2em;
+}
+.second-page{
+    margin-top: 5em;
 }
 
 .img-container {
-  width: 100%;
-  height: 200px;
+    width: 100%;
+    height: 200px;
+  }
+  
+  .img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    height: 200px;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #333;
+  }
+  
+  .img-container:hover .overlay {
+    opacity: 0.9;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+  }
+nav{
+    margin-bottom: 2em;
 }
 
-.img {
-  height: 200px;
-  object-fit: cover;
+.third-page{
+    width: 100%;
+   
+   
+    
+}
+.longRow{
+    margin-bottom: 2em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.sidebar{
+    text-align: center;
+    padding-top: 2em;
+    background-color: #a73962;
+  
+}
+.collapseArea{
+    margin-top: 1.5em;
+    width: 100%;
+    text-align: left !important;
+    color: black !important;
+    background-color: #daedfb !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border:0 !important;
+}
+.collapseArea:hover{
+    background-color: #ff7f51 !important;
+    color:white !important;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  height: 200px;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: #333;
+.locLists{
+   
+   
+}
+.colorList{
+    margin-top: 2em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    list-style-type:none; 
+    padding: 2em;
+    background-color: #daedfb;
+}
+.back-buttn{
+    align-content: flex-start;
+    text-align: left;
 }
 
-.img-container:hover .overlay {
-  opacity: 0.9;
+.green{
+    color: green;
+  }
+.yellow{
+      color: rgb(211, 138, 21);
 }
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 1;
+.red{
+      color: red;
+}
+.black{
+      color:black;
 }
 /* 
 .online {
