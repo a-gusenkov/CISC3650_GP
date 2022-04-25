@@ -9,21 +9,229 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container ">
-            <div class="row">
+        <div class="container third-page">
+            <div class="row ">
+               
                 <div class="col">
-                     <!--Page Intro (title and stuff)-->
-                <h1 class="center-content">Page Name</h1>
-                <p class="center-content">Little info</p>
+                    <nav class="navbar navbar-light bg-light ">
+                        <a class="btn btn-primary back-buttn" href="pickLocation.html" role="button">Back</a>
+                        <a class="navbar-brand h1" href="./homepage.html">Campus Connector</a>
+                    </nav>
                 </div>
                
             </div> 
-            <div class="row">
+            <div class="row longRow">
 
-                <div class="col-2">
+                <div class="col-3 sidebar">
+                    <!--Sidebar-->
+                    <h4>Person Adder</h4>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHowto" aria-expanded="false" aria-controls="collapseExample">
+                          How to Use ▼
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseHowto">
+                        <div class="card card-body">
+                         
+                           How to use.
+                           <p class="green">Open to Chat = green </p>
+
+                        </div>
+                      </div>
+
+
+                      <!--First floor button-->
+                      <p>
+                        <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea1" aria-expanded="false" aria-controls="collapseExample">
+                          Library: First Floor ▼
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseArea1">
+                        <div class="card card-body">
+
+                            <form>
+                                <div class="form-group">
+                                  <label for="formGroupExampleInput">Name</label>
+                                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Preferred Name">
+                                </div>
+                                <div class="form-group">
+                                  <label for="formGroupExampleInput2">Status</label>
+                                  <select class="form-control" id="status" name="Status">
+                                    <option value="Open" >Open to Chat</option>
+                                    <option value="OpenWW">Open to Work With</option>
+                                    <option value="Busy">Busy</option>
+                                
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Notes</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Details About Location">
+                                  </div>
+                                <button type="submit" class="btn btn-primary"><Em>Enter into the Map</Em></button>
+                            </form>
+
+                        </div>
+                      </div>
+                        <!--Second floor button-->
+                        <p>
+                            <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea2" aria-expanded="false" aria-controls="collapseExample">
+                              Library: Second Floor ▼
+                            </button>
+                          </p>
+                          <div class="collapse" id="collapseArea2">
+                            <div class="card card-body">
+    
+                                <form>
+                                    <div class="form-group">
+                                      <label for="formGroupExampleInput">Name</label>
+                                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Preferred Name">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="formGroupExampleInput2">Status</label>
+                                      <select class="form-control" id="status" name="Status">
+                                        <option value="Open" >Open to Chat</option>
+                                        <option value="OpenWW">Open to Work With</option>
+                                        <option value="Busy">Busy</option>
+                                    
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Notes</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Details About Location">
+                                      </div>
+                                    <button type="submit" class="btn btn-primary"><Em>Enter into the Map</Em></button>
+                                </form>
+    
+                            </div>
+                          </div>
+                    <!--Third floor button-->
+                      <p>
+                        <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea3" aria-expanded="false" aria-controls="collapseExample">
+                          Library: Third Floor ▼
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseArea3">
+                        <div class="card card-body">
+
+                            <form>
+                                <div class="form-group">
+                                  <label for="formGroupExampleInput">Name</label>
+                                  <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Preferred Name">
+                                </div>
+                                <div class="form-group">
+                                  <label for="formGroupExampleInput2">Status</label>
+                                  <select class="form-control" id="status" name="Status">
+                                    <option value="Open" >Open to Chat</option>
+                                    <option value="OpenWW">Open to Work With</option>
+                                    <option value="Busy">Busy</option>
+                                
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Notes</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Details About Location">
+                                  </div>
+                                <button type="submit" class="btn btn-primary"><Em>Enter into the Map</Em></button>
+                            </form>
+
+                        </div>
+                      </div>
+                        <!--Fourth floor button-->
+                        <p>
+                            <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea4" aria-expanded="false" aria-controls="collapseExample">
+                              Library: Basement ▼
+                            </button>
+                          </p>
+                          <div class="collapse" id="collapseArea4">
+                            <div class="card card-body">
+    
+                                <form>
+                                    <div class="form-group">
+                                      <label for="formGroupExampleInput">Name</label>
+                                      <input type="text" class="form-control" id="NameInput1" placeholder="Preferred Name">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="formGroupExampleInput2">Status</label>
+                                      <select class="form-control" id="status" name="Status">
+                                        <option value="Open" >Open to Chat</option>
+                                        <option value="OpenWW">Open to Work With</option>
+                                        <option value="Busy">Busy</option>
+                                    
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Notes</label>
+                                        <input type="text" class="form-control" id="NoteInput1" placeholder="Details About Location">
+                                      </div>
+                                    <button type="submit" class="btn btn-primary"><Em>Enter into the Map</Em></button>
+                                </form>
+                                <!--
+                                    <li>Name (class related to select)</li>
+                                    <p> Notes </p>
+                                -->
+                            </div>
+                          </div>
+
+
 
                 </div>
-                <div class="col-10">
+                <div class="col-9 locLists">
+                   
+                    <div class="row">
+
+                        <!--First Area-->
+                        <div class="col">
+                            
+                            <ul class="colorList">
+                                <h3>First Floor</h3>
+                                
+                                <li class="red">Jane Young </li>
+                                <p >Im in the printer section.</p>
+
+
+                                <li class="yellow">Ahmed Aboudoin <p class="black">Im at the front desk.</p></li>
+                                <li class="green">John Smith <p class="black">Im at the scanner</p></li>
+                                <li class="green">Emily Johnson <p class="black">Im in the circle room.</p></li>
+                            </ul>
+
+                        </div>
+                        <!--Seconf Area-->
+                        <div class="col">
+                             
+                            <ul class="colorList">
+                                <h3>Second Floor</h3>
+                                <li class="green">John Smith <p class="black">Find me next to the door.</p></li>
+                                <li class="green">Emily Johnson <p class="black">Im right next to the back exit.</p></li>
+                                <li class="yellow">Ahmed Aboudoin <p class="black">Im at the front desk.</p></li>
+                                
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <!--Third Area-->
+                        <div class="col">
+                            <ul class="colorList">
+                                <h3>Third Floor</h3>
+                                <li class="green">John Smith <p class="black">Find me next to the door.</p></li>
+                                
+                                <li class="yellow">Ahmed Aboudoin <p class="black">Im at the front desk.</p></li>
+                                <li class="green">Emily Johnson <p class="black">Im in the circle room.</p></li>
+                            </ul>
+
+                        </div>
+                        <!--Fourth Area-->
+                        <div class="col">
+                            <ul class="colorList">
+                                <h3>Third Floor</h3>
+                                <li class="green">John Smith <p class="black">Find me next to the door.</p></li>
+                                <li class="green">Emily Johnson <p class="black">Im right next to the back exit.</p></li>
+                                <li class="red">Jane Young <p class="black">Im in the printer section.</p></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
                     
                 </div>
             </div>
