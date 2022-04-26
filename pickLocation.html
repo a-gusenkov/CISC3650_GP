@@ -2,6 +2,12 @@
 <html>
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pick Location</title>
+
     <link rel="stylesheet" href="styles3650.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -15,9 +21,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    
-    
+
     <script>
+      
+       
 
         function handleClick() {
             console.log("hi");
@@ -26,29 +33,28 @@
         }
 
     </script>
-    
 </head>
 
 <body>
-   
+    
     <div class="container second-page">
-        
-        <nav class="navbar navbar-light">
-            <a class="btn btn-primary back-buttn" href="homepage.html" role="button">Back</a>
+        <nav class="navbar navbar-light  ">
+            <a class="btn btn-primary back-buttn" href="index.html" role="button">Back</a>
             <h2 class="sub-title">Pick a Location</h2>
-            <a class="navbar-brand h1" href="./homepage.html"><img src="./img/logo.png" class="img-fluid float-right small-logo " alt="Responsive image"></a>
+            <a class="navbar-brand h1" href="./index.html"><img src="./img/logo.png" class="img-fluid float-right small-logo " alt="Responsive image"></a>
         </nav>
         <div class="note" id="note">
             <button type="button" class="btn-close close-btn " id="close-btn" onclick="handleClick()" >X</button>
             <span class="note-span">Note: Want to see a sneek peek at who's online? Click on the person icon to the right of the location button!</span>
         </div>
-        
+
         <div class="row">
+
             <!--Location Cards-->
             <div class="col-12 col-md-6">
                 <div class="card m-4 shadow">
                     <div class="img-container">
-                        <img class="card-img-top img" src="img/library.jpeg" alt="Card image cap">
+                        <img class="card-img-top img" src="./img/library.jpg" alt="Card image cap">
                         <div class="overlay">
                             <h5 class="text">Library</h5>
                         </div>
@@ -60,7 +66,7 @@
                             </div>
 
                             <div class="col text-right align-self-center" data-toggle="popover"
-                                data-content="Ben, Elon, Joe, ..." title="Online" style="cursor: pointer">
+                                data-content="Kazi, Jane, Emily, ..." title="Online" style="cursor: pointer">
                                 <p class="m-0">5 <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"
                                         fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                         <path
@@ -74,7 +80,7 @@
             <div class="col-12 col-md-6">
                 <div class="card m-4 shadow">
                     <div class="img-container">
-                        <img class="card-img-top img" src="img/boylan.jpeg" alt="Card image cap">
+                        <img class="card-img-top img" src="./img/boylan.jpg" alt="Card image cap">
                         <div class="overlay">
                             <h5 class="text">Boylan Hall</h5>
                         </div>
@@ -82,11 +88,11 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <a href="#" class="btn btn-primary red-button">Visit Boylan Hall</a>
+                                <a href="boylan.html" class="btn btn-primary red-button ">Visit Boylan Hall</a>
                             </div>
 
                             <div class="col text-right align-self-center" data-toggle="popover"
-                                data-content="John, Alex, Mary, ..." title="Online" style="cursor: pointer">
+                                data-content="Safaa, Prof. X, Joseph, ..." title="Online" style="cursor: pointer">
                                 <p class="m-0">10 <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"
                                         fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                         <path
@@ -122,3 +128,4 @@
 </body>
 
 </html>
+
