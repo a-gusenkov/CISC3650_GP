@@ -143,6 +143,7 @@ nav{
     background-color: #a73962;
     border: solid !important;
     border-width: 0.2em !important;
+    padding-bottom: 1em;
   
 }
 .sub-title{
@@ -201,12 +202,15 @@ button:active{
     border-color: #fbf168 ;
     color: #fbf168 !important;
 }
+.close{
+    padding-top: 0.6em !important;
+}
 
 .green{
     color: rgb(1, 225, 1);
   }
 .yellow{
-      color: rgb(235, 168, 60);
+      color: rgb(225, 139, 0);
 }
 .red{
       color: rgb(120, 0, 0);
@@ -214,8 +218,3 @@ button:active{
 .black{
       color:black;
 }
-/* 
-.online {
-  width: 100%;
-  height: 100%;
-} */
