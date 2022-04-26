@@ -7,6 +7,48 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script>
+          window.onload=function(){
+                  const myForm = document.querySelector('#form1');
+                      myForm.addEventListener("submit", function(evt) {
+                        evt.preventDefault();
+                    });
+                  }
+                 
+                  function addLi() {
+                    //add name 
+                    var txtVal = document.getElementById('name1').value,
+                    listNode = document.getElementById('list1'),
+                    liNode = document.createElement("LI"),
+                    txtNode = document.createTextNode(txtVal);
+                    
+                    const selectPart = document.querySelector('#status1');
+                    if(selectPart.value === "Busy"){
+                      liNode.className = "red";
+                      
+                    }else if(selectPart.value === "OpenWW"){
+                      liNode.className = "yellow";
+                    }else{
+                      liNode.className = "green";
+                    }
+                    
+                    liNode.appendChild(txtNode);
+                    listNode.appendChild(liNode);
+
+                    // add notes
+                    var pVal = document.getElementById('notes1').value,
+                    listNode = document.getElementById('list1'),
+                    pNode = document.createElement("P"),
+                    paNode = document.createTextNode(pVal);
+
+                    pNode.appendChild(paNode);
+                    listNode.appendChild(pNode);
+                    
+                }
+          
+
+        </script>
     </head>
     <body>
         <div class="container third-page">
@@ -52,25 +94,28 @@
                       <div class="collapse" id="collapseArea1">
                         <div class="card card-body">
 
-                            <form>
+                            <form id="form1">
                                 <div class="form-group">
-                                  <label for="formGroupExampleInput">Name</label>
-                                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Preferred Name">
+                                  <label >Name</label>
+                                  <input type="text" class="form-control" id="name1" placeholder="Preferred Name">
                                 </div>
+
                                 <div class="form-group">
-                                  <label for="formGroupExampleInput2">Status</label>
-                                  <select class="form-control" id="status" name="Status">
+                                  <label >Status</label>
+                                  <select class="form-control" id="status1" name="Status">
                                     <option value="Open" >Open to Chat</option>
                                     <option value="OpenWW">Open to Work With</option>
                                     <option value="Busy">Busy</option>
                                 
                                   </select>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="formGroupExampleInput">Notes</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Details About Location">
-                                  </div>
-                                <button type="submit" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+                                    <label >Notes</label>
+                                    <input type="text" class="form-control" id="notes1" placeholder="Details About Location">
+                                </div>
+
+                                <button type="submit" name="submit" value="submit1" id="submit1" onclick="addLi();" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
                             </form>
 
                         </div>
@@ -84,26 +129,29 @@
                           <div class="collapse" id="collapseArea2">
                             <div class="card card-body">
     
-                                <form>
-                                    <div class="form-group">
-                                      <label for="formGroupExampleInput">Name</label>
-                                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Preferred Name">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="formGroupExampleInput2">Status</label>
-                                      <select class="form-control" id="status" name="Status">
-                                        <option value="Open" >Open to Chat</option>
-                                        <option value="OpenWW">Open to Work With</option>
-                                        <option value="Busy">Busy</option>
-                                    
-                                      </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="formGroupExampleInput">Notes</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Details About Location">
-                                      </div>
-                                    <button type="submit" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
-                                </form>
+                              <form id="form2">
+                                <div class="form-group">
+                                  <label >Name</label>
+                                  <input type="text" class="form-control" id="name2" placeholder="Preferred Name">
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label >Status</label>
+                                  <select class="form-control" id="status2" name="Status">
+                                    <option value="Open" >Open to Chat</option>
+                                    <option value="OpenWW">Open to Work With</option>
+                                    <option value="Busy">Busy</option>
+                                
+                                  </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label >Notes</label>
+                                    <input type="text" class="form-control" id="notes2" placeholder="Details About Location">
+                                </div>
+
+                                <button type="submit" name="submit" value="submit" id="submit2" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+                            </form>
     
                             </div>
                           </div>
@@ -116,26 +164,29 @@
                       <div class="collapse" id="collapseArea3">
                         <div class="card card-body">
 
-                            <form>
-                                <div class="form-group">
-                                  <label for="formGroupExampleInput">Name</label>
-                                  <input type="text" class="form-control " id="formGroupExampleInput" placeholder="Preferred Name">
-                                </div>
-                                <div class="form-group">
-                                  <label for="formGroupExampleInput2">Status</label>
-                                  <select class="form-control" id="status" name="Status">
-                                    <option value="Open" >Open to Chat</option>
-                                    <option value="OpenWW">Open to Work With</option>
-                                    <option value="Busy">Busy</option>
-                                
-                                  </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="formGroupExampleInput">Notes</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Details About Location">
-                                  </div>
-                                <button type="submit" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
-                            </form>
+                          <form id="form3">
+                            <div class="form-group">
+                              <label >Name</label>
+                              <input type="text" class="form-control" id="name3" placeholder="Preferred Name">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label >Status</label>
+                              <select class="form-control" id="status3" name="Status">
+                                <option value="Open" >Open to Chat</option>
+                                <option value="OpenWW">Open to Work With</option>
+                                <option value="Busy">Busy</option>
+                            
+                              </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label >Notes</label>
+                                <input type="text" class="form-control" id="notes3" placeholder="Details About Location">
+                            </div>
+
+                            <button type="submit" name="submit" value="submit" id="submit3" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+                        </form>
 
                         </div>
                       </div>
@@ -148,26 +199,29 @@
                           <div class="collapse" id="collapseArea4">
                             <div class="card card-body">
     
-                                <form>
-                                    <div class="form-group">
-                                      <label for="formGroupExampleInput">Name</label>
-                                      <input type="text" class="form-control" id="NameInput1" placeholder="Preferred Name">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="formGroupExampleInput2">Status</label>
-                                      <select class="form-control" id="status" name="Status">
-                                        <option value="Open" >Open to Chat</option>
-                                        <option value="OpenWW">Open to Work With</option>
-                                        <option value="Busy">Busy</option>
-                                    
-                                      </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="formGroupExampleInput">Notes</label>
-                                        <input type="text" class="form-control" id="NoteInput1" placeholder="Details About Location">
-                                      </div>
-                                    <button type="submit" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
-                                </form>
+                              <form id="form4">
+                                <div class="form-group">
+                                  <label >Name</label>
+                                  <input type="text" class="form-control" id="name4" placeholder="Preferred Name">
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label >Status</label>
+                                  <select class="form-control" id="status4" name="Status">
+                                    <option value="Open" >Open to Chat</option>
+                                    <option value="OpenWW">Open to Work With</option>
+                                    <option value="Busy">Busy</option>
+                                
+                                  </select>
+                                </div>
+    
+                                <div class="form-group">
+                                    <label >Notes</label>
+                                    <input type="text" class="form-control" id="notes4" placeholder="Details About Location">
+                                </div>
+    
+                                <button type="submit" name="submit" value="submit" id="submit4" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+                            </form>
                                 <!--
                                     <li>Name (class related to select)</li>
                                     <p> Notes </p>
@@ -185,7 +239,7 @@
                         <!--First Area-->
                         <div class="col">
                             
-                            <ul class="colorList">
+                            <ul class="colorList" id="list1">
                                 <h3>First Floor</h3>
                                 
                                 <li class="red">Jane Young </li>
@@ -201,7 +255,7 @@
                         <!--Seconf Area-->
                         <div class="col">
                              
-                            <ul class="colorList">
+                            <ul class="colorList" id="list2">
                                 <h3>Second Floor</h3>
                                 <li class="green">John Smith <p class="black">Find me next to the door.</p></li>
                                 <li class="green">Emily Johnson <p class="black">Im right next to the back exit.</p></li>
@@ -215,7 +269,7 @@
                         
                         <!--Third Area-->
                         <div class="col">
-                            <ul class="colorList">
+                            <ul class="colorList" id="list3" >
                                 <h3>Third Floor</h3>
                                 <li class="green">John Smith <p class="black">Find me next to the door.</p></li>
                                 
@@ -226,7 +280,7 @@
                         </div>
                         <!--Fourth Area-->
                         <div class="col">
-                            <ul class="colorList">
+                            <ul class="colorList" id="list4">
                                 <h3>Third Floor</h3>
                                 <li class="green">John Smith <p class="black">Find me next to the door.</p></li>
                                 <li class="green">Emily Johnson <p class="black">Im right next to the back exit.</p></li>
@@ -240,4 +294,4 @@
             </div>
         </div>
     </body>    
-</html>       
+</html>    
