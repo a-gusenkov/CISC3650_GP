@@ -34,7 +34,21 @@
         evt.preventDefault();
       });
 
-      $('.toast').toast(option)
+      $('#collapseAreaBtn1').on('click', function () { console.log("area 1 called"); closeOtherCollapse('area1') })
+      $('#collapseAreaBtn2').on('click', function () { console.log("area 2 called"); closeOtherCollapse('area2') })
+      $('#collapseAreaBtn3').on('click', function () { console.log("area 3 called"); closeOtherCollapse('area3') })
+      $('#collapseAreaBtn4').on('click', function () { console.log("area 4 called"); closeOtherCollapse('area4') })
+    }
+
+    function closeOtherCollapse(currentCollapse) {
+      if (currentCollapse !== 'area1')
+        document.getElementById('collapseArea1').classList.remove('show')
+      if (currentCollapse !== 'area2')
+        document.getElementById('collapseArea2').classList.remove('show')
+      if (currentCollapse !== 'area3')
+        document.getElementById('collapseArea3').classList.remove('show')
+      if (currentCollapse !== 'area4')
+        document.getElementById('collapseArea4').classList.remove('show')
     }
 
     function handleClick() {
@@ -82,7 +96,6 @@
       } else {
         liNode.appendChild(txtNode);
         listNode.appendChild(liNode);
-
       }
 
       // add notes
@@ -316,13 +329,13 @@
         <!--First floor button-->
         <p>
           <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea1"
-            aria-expanded="false" aria-controls="collapseExample">
+            aria-expanded="false" aria-controls="collapseExample" id="collapseAreaBtn1">
             Library: First Floor ▼
           </button>
         </p>
         <div class="collapse" id="collapseArea1">
           <div class="card card-body">
-            <div class="alert alert-success alert-dismissible d-none" id="alert-1">
+            <div class="alert alert-success alert-dismissible fade show d-none" id="alert-1">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong>Add Success!</strong>
             </div>
@@ -352,13 +365,13 @@
         <!--Second floor button-->
         <p>
           <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea2"
-            aria-expanded="false" aria-controls="collapseExample">
+            aria-expanded="false" aria-controls="collapseExample" id="collapseAreaBtn2">
             Library: Second Floor ▼
           </button>
         </p>
         <div class="collapse" id="collapseArea2">
           <div class="card card-body">
-            <div class="alert alert-success alert-dismissible d-none" id="alert-2">
+            <div class="alert alert-success alert-dismissible fade show d-none" id="alert-2">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong>Add Success!</strong>
             </div>
@@ -387,13 +400,13 @@
         <!--Third floor button-->
         <p>
           <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea3"
-            aria-expanded="false" aria-controls="collapseExample">
+            aria-expanded="false" aria-controls="collapseExample" id="collapseAreaBtn3">
             Library: Third Floor ▼
           </button>
         </p>
         <div class="collapse" id="collapseArea3">
           <div class="card card-body">
-            <div class="alert alert-success alert-dismissible d-none" id="alert-3">
+            <div class="alert alert-success alert-dismissible fade show d-none" id="alert-3">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong>Add Success!</strong>
             </div>
@@ -423,13 +436,13 @@
         <!--Fourth floor button-->
         <p>
           <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea4"
-            aria-expanded="false" aria-controls="collapseExample">
+            aria-expanded="false" aria-controls="collapseExample" id="collapseAreaBtn4">
             Library: Basement ▼
           </button>
         </p>
         <div class="collapse" id="collapseArea4">
           <div class="card card-body">
-            <div class="alert alert-success alert-dismissible d-none" id="alert-4">
+            <div class="alert alert-success alert-dismissible fade show d-none" id="alert-4">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong>Add Success!</strong>
             </div>
