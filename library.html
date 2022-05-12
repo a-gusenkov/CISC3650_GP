@@ -1,519 +1,525 @@
 <!Doctype html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles3650.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <title>CC: Library</title>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
-        <script>
-              window.onload=function(){
-                  const myForm = document.querySelector('#form2');
-                      myForm.addEventListener("submit", function(evt) {
-                        evt.preventDefault();
-                    });
 
-                    const myForm1 = document.querySelector('#form1');
-                      myForm1.addEventListener("submit", function(evt) {
-                        evt.preventDefault();
-                    });
+<head>
+  <link rel="stylesheet" href="styles3650.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>CC: Library</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    window.onload = function () {
+      const myForm = document.querySelector('#form2');
+      myForm.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+      });
+      const myForm1 = document.querySelector('#form1');
+      myForm1.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+      });
+      const myForm3 = document.querySelector('#form3');
+      myForm3.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+      });
+      const myForm4 = document.querySelector('#form4');
+      myForm4.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+      });
 
-                    const myForm3 = document.querySelector('#form3');
-                      myForm3.addEventListener("submit", function(evt) {
-                        evt.preventDefault();
-                    });
+      $('.toast').toast(option)
+    }
 
-                    const myForm4 = document.querySelector('#form4');
-                      myForm4.addEventListener("submit", function(evt) {
-                        evt.preventDefault();
-                    });
-          
-          
-              }
+    function handleClick() {
+      console.log("hi");
+      const note = document.getElementById('note');
+      note.remove();
+    }
 
-              function handleClick() {
-                console.log("hi");
-                const note = document.getElementById('note');
-                note.remove();
-            }
- 
-                  function addLi() {
-                    //close button
-                    var buttonClose = document.createElement("button");
-                
-                    
-                    buttonClose.setAttribute("id","close");
-                    buttonClose.setAttribute("class","close");
-                    buttonClose.onclick = function(){
-                      this.parentNode.removeChild(liNode);
-                      this.parentNode.removeChild(pNode);
-                      this.remove();
-                    }
-                    buttonClose.innerHTML = "X";
+    function addLi() {
+      //close button
+      var buttonClose = document.createElement("button");
+      var alert = document.getElementById("alert-1");
+      alert.classList.remove("d-none");
 
-                    document.getElementById('list1').appendChild(buttonClose);
-         
-                    //add name 
-                    var txtVal = document.getElementById('name1').value,
-                    listNode = document.getElementById('list1'),
-                    liNode = document.createElement("LI"),
-                    txtNode = document.createTextNode(txtVal);
-                    
-                    const selectPart = document.querySelector('#status1');
-                    if(selectPart.value === "Busy"){
-                      liNode.className = "red";
-                      
-                    }else if(selectPart.value === "OpenWW"){
-                      liNode.className = "yellow";
-                    }else{
-                      liNode.className = "green";
-                    }
-                    
-                  
-                    if (txtVal === '' || pVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      liNode.appendChild(txtNode);
-                      listNode.appendChild(liNode);
-                      
-                    }
+      buttonClose.setAttribute("id", "close");
+      buttonClose.setAttribute("class", "close");
+      buttonClose.onclick = function () {
+        this.parentNode.removeChild(liNode);
+        this.parentNode.removeChild(pNode);
+        this.remove();
+      }
+      buttonClose.innerHTML = "X";
 
-                    // add notes
-                    var pVal = document.getElementById('notes1').value,
-                    listNode = document.getElementById('list1'),
-                    pNode = document.createElement("P"),
-                    paNode = document.createTextNode(pVal);
+      document.getElementById('list1').appendChild(buttonClose);
 
-                    if (pVal === '' ||txtVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      pNode.appendChild(paNode);
-                      listNode.appendChild(pNode);
-                    }
- 
-                }
-         
-                //second form
-                function addLi2() {
-                    //close button
-                    var buttonClose = document.createElement("button");
-                
-                    
-                    buttonClose.setAttribute("id","close");
-                    buttonClose.setAttribute("class","close");
-                    buttonClose.onclick = function(){
-                      this.parentNode.removeChild(liNode);
-                      this.parentNode.removeChild(pNode);
-                      this.remove();
-                    }
-                    buttonClose.innerHTML = "X";
+      //add name 
+      var txtVal = document.getElementById('name1').value,
+        listNode = document.getElementById('list1'),
+        liNode = document.createElement("LI"),
+        txtNode = document.createTextNode(txtVal);
 
-                    document.getElementById('list2').appendChild(buttonClose);
-         
-                    //add name 
-                    var txtVal = document.getElementById('name2').value,
-                    listNode = document.getElementById('list2'),
-                    liNode = document.createElement("LI"),
-                    txtNode = document.createTextNode(txtVal);
-                    
-                    const selectPart = document.querySelector('#status2');
-                    if(selectPart.value === "Busy"){
-                      liNode.className = "red";
-                      
-                    }else if(selectPart.value === "OpenWW"){
-                      liNode.className = "yellow";
-                    }else{
-                      liNode.className = "green";
-                    }
-                    
-                  
-                    if (txtVal === '' || pVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      liNode.appendChild(txtNode);
-                      listNode.appendChild(liNode);
-                      
-                    }
+      const selectPart = document.querySelector('#status1');
+      if (selectPart.value === "Busy") {
+        liNode.className = "red";
 
-                    // add notes
-                    var pVal = document.getElementById('notes2').value,
-                    listNode = document.getElementById('list2'),
-                    pNode = document.createElement("P"),
-                    paNode = document.createTextNode(pVal);
-
-                    if (pVal === '' ||txtVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      pNode.appendChild(paNode);
-                      listNode.appendChild(pNode);
-                    }
-
-                }
-                 //third
-                 function addLi3() {
-                    //close button
-                    var buttonClose = document.createElement("button");
-                
-                    
-                    buttonClose.setAttribute("id","close");
-                    buttonClose.setAttribute("class","close");
-                    buttonClose.onclick = function(){
-                      this.parentNode.removeChild(liNode);
-                      this.parentNode.removeChild(pNode);
-                      this.remove();
-                    }
-                    buttonClose.innerHTML = "X";
-
-                    document.getElementById('list3').appendChild(buttonClose);
-         
-                    //add name 
-                    var txtVal = document.getElementById('name3').value,
-                    listNode = document.getElementById('list3'),
-                    liNode = document.createElement("LI"),
-                    txtNode = document.createTextNode(txtVal);
-                    
-                    const selectPart = document.querySelector('#status3');
-                    if(selectPart.value === "Busy"){
-                      liNode.className = "red";
-                      
-                    }else if(selectPart.value === "OpenWW"){
-                      liNode.className = "yellow";
-                    }else{
-                      liNode.className = "green";
-                    }
-                    
-                  
-                    if (txtVal === '' || pVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      liNode.appendChild(txtNode);
-                      listNode.appendChild(liNode);
-                      
-                    }
-
-                    // add notes
-                    var pVal = document.getElementById('notes3').value,
-                    listNode = document.getElementById('list3'),
-                    pNode = document.createElement("P"),
-                    paNode = document.createTextNode(pVal);
-
-                    if (pVal === '' ||txtVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      pNode.appendChild(paNode);
-                      listNode.appendChild(pNode);
-                    }
-
-                }
-                
-                function addLi4() {
-                    //close button
-                    var buttonClose = document.createElement("button");
-                
-                    
-                    buttonClose.setAttribute("id","close");
-                    buttonClose.setAttribute("class","close");
-                    buttonClose.onclick = function(){
-                      this.parentNode.removeChild(liNode);
-                      this.parentNode.removeChild(pNode);
-                      this.remove();
-                    }
-                    buttonClose.innerHTML = "X";
-
-                    document.getElementById('list4').appendChild(buttonClose);
-         
-                    //add name 
-                    var txtVal = document.getElementById('name4').value,
-                    listNode = document.getElementById('list4'),
-                    liNode = document.createElement("LI"),
-                    txtNode = document.createTextNode(txtVal);
-                    
-                    const selectPart = document.querySelector('#status4');
-                    if(selectPart.value === "Busy"){
-                      liNode.className = "red";
-                      
-                    }else if(selectPart.value === "OpenWW"){
-                      liNode.className = "yellow";
-                    }else{
-                      liNode.className = "green";
-                    }
-                    
-                  
-                    if (txtVal === '' || pVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      liNode.appendChild(txtNode);
-                      listNode.appendChild(liNode);
-                      
-                    }
-
-                    // add notes
-                    var pVal = document.getElementById('notes4').value,
-                    listNode = document.getElementById('list4'),
-                    pNode = document.createElement("P"),
-                    paNode = document.createTextNode(pVal);
-
-                    if (pVal === '' ||txtVal === '' ) {
-                      alert("You must write something!");
-                    } else {
-                      pNode.appendChild(paNode);
-                      listNode.appendChild(pNode);
-                    }
-
-                }
-          
-
-        </script>
-    </head>
-    <body>
-        <div class="container third-page">
-            <div class="row ">
-               
-                <div class="col">
-                    <nav class="navbar navbar-light  ">
-
-                        <a class="btn btn-primary back-buttn" href="pickLocation.html" role="button">Back</a>
-                        <h2 class="sub-title">The Library</h2>
-                        <a class="navbar-brand h1" href="./index.html">  <a class="navbar-brand h1" href="./index.html"><img src="./img/logo.png" class="img-fluid float-right small-logo " alt="Responsive image"></a></a>
-                    </nav>
-                </div>
-               
-            </div> 
-            <div class="row longRow">
-
-                <div class="col-3 sidebar">
-                    <!--Sidebar-->
-                    <h3 class="sub-title">Campus Adder</h3>
-                    <br/>
-                    <p>
-                        <button class="btn btn-primary back-buttn" type="button" data-toggle="collapse" data-target="#collapseHowto" aria-expanded="false" aria-controls="collapseExample">
-                          How to Use ▼
-                        </button>
-                      </p>
-                      <div class="collapse" id="collapseHowto">
-                        <div class="card card-body ">
-                         
-                          <p> Find four floors of the library availible below. Click on the floor your currently located and fill out the form 
-                           to notify your peers of your name, you status, and more details of your location on the floor. Once you submit you can delete yourself from the map 
-                           by pressing the "X" next to your submission.
-                           
-                           <p class="green">Green Status</p> Means the user is open to chat. 
-                           
-                           <p class="yellow">Yellow Status</p> Means a user is open to work together. 
-                           
-                           <p class="red">Red Status</p> Means a user is busy, best not to approach. 
-                        </p>
-                        </div>
-                      </div>
+      } else if (selectPart.value === "OpenWW") {
+        liNode.className = "yellow";
+      } else {
+        liNode.className = "green";
+      }
 
 
-                      <!--First floor button-->
-                      <p>
-                        <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea1" aria-expanded="false" aria-controls="collapseExample">
-                          Library: First Floor ▼
-                        </button>
-                      </p>
-                      <div class="collapse" id="collapseArea1">
-                        <div class="card card-body">
+      if (txtVal === '' || pVal === '') {
+        alert("You must write something!");
+      } else {
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
 
-                            <form id="form1">
-                                <div class="form-group">
-                                  <label >Name</label>
-                                  <input type="text" class="form-control" id="name1" placeholder="Preferred Name">
-                                </div>
+      }
 
-                                <div class="form-group">
-                                  <label >Status</label>
-                                  <select class="form-control" id="status1" name="Status">
-                                    <option value="Open" >Open to Chat</option>
-                                    <option value="OpenWW">Open to Work With</option>
-                                    <option value="Busy">Busy</option>
-                                
-                                  </select>
-                                </div>
+      // add notes
+      var pVal = document.getElementById('notes1').value,
+        listNode = document.getElementById('list1'),
+        pNode = document.createElement("P"),
+        paNode = document.createTextNode(pVal);
 
-                                <div class="form-group">
-                                    <label >Notes</label>
-                                    <input type="text" class="form-control" id="notes1" placeholder="Details About Location">
-                                </div>
+      if (pVal === '' || txtVal === '') {
+        alert("You must write something!");
+      } else {
+        pNode.appendChild(paNode);
+        listNode.appendChild(pNode);
+      }
 
-                                <button type="submit" name="submit" value="submit1" id="submit1"  onclick="addLi();" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
-                            </form>
+    }
 
-                        </div>
-                      </div>
-                        <!--Second floor button-->
-                        <p>
-                            <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea2" aria-expanded="false" aria-controls="collapseExample">
-                              Library: Second Floor ▼
-                            </button>
-                          </p>
-                          <div class="collapse" id="collapseArea2">
-                            <div class="card card-body">
-    
-                              <form id="form2">
-                                <div class="form-group">
-                                  <label >Name</label>
-                                  <input type="text" class="form-control" id="name2" placeholder="Preferred Name">
-                                </div>
-                                
-                                <div class="form-group">
-                                  <label >Status</label>
-                                  <select class="form-control" id="status2" name="Status">
-                                    <option value="Open" >Open to Chat</option>
-                                    <option value="OpenWW">Open to Work With</option>
-                                    <option value="Busy">Busy</option>
-                                
-                                  </select>
-                                </div>
+    //second form
+    function addLi2() {
+      //close button
+      var buttonClose = document.createElement("button");
+      var alert = document.getElementById("alert-2");
+      alert.classList.remove("d-none");
 
-                                <div class="form-group">
-                                    <label >Notes</label>
-                                    <input type="text" class="form-control" id="notes2" placeholder="Details About Location">
-                                </div>
+      buttonClose.setAttribute("id", "close");
+      buttonClose.setAttribute("class", "close");
+      buttonClose.onclick = function () {
+        this.parentNode.removeChild(liNode);
+        this.parentNode.removeChild(pNode);
+        this.remove();
+      }
+      buttonClose.innerHTML = "X";
 
-                                <button type="submit" name="submit" value="submit" id="submit2" onclick="addLi2();" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
-                            </form>
-    
-                            </div>
-                          </div>
-                    <!--Third floor button-->
-                      <p>
-                        <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea3" aria-expanded="false" aria-controls="collapseExample">
-                          Library: Third Floor ▼
-                        </button>
-                      </p>
-                      <div class="collapse" id="collapseArea3">
-                        <div class="card card-body">
+      document.getElementById('list2').appendChild(buttonClose);
 
-                          <form id="form3">
-                            <div class="form-group">
-                              <label >Name</label>
-                              <input type="text" class="form-control" id="name3" placeholder="Preferred Name">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label >Status</label>
-                              <select class="form-control" id="status3" name="Status">
-                                <option value="Open" >Open to Chat</option>
-                                <option value="OpenWW">Open to Work With</option>
-                                <option value="Busy">Busy</option>
-                            
-                              </select>
-                            </div>
+      //add name 
+      var txtVal = document.getElementById('name2').value,
+        listNode = document.getElementById('list2'),
+        liNode = document.createElement("LI"),
+        txtNode = document.createTextNode(txtVal);
 
-                            <div class="form-group">
-                                <label >Notes</label>
-                                <input type="text" class="form-control" id="notes3" placeholder="Details About Location">
-                            </div>
+      const selectPart = document.querySelector('#status2');
+      if (selectPart.value === "Busy") {
+        liNode.className = "red";
 
-                            <button type="submit" name="submit" value="submit" id="submit3" onclick="addLi3();" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
-                        </form>
-
-                        </div>
-                      </div>
-                        <!--Fourth floor button-->
-                        <p>
-                            <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea4" aria-expanded="false" aria-controls="collapseExample">
-                              Library: Basement ▼
-                            </button>
-                          </p>
-                          <div class="collapse" id="collapseArea4">
-                            <div class="card card-body">
-    
-                              <form id="form4">
-                                <div class="form-group">
-                                  <label >Name</label>
-                                  <input type="text" class="form-control" id="name4" placeholder="Preferred Name">
-                                </div>
-                                
-                                <div class="form-group">
-                                  <label >Status</label>
-                                  <select class="form-control" id="status4" name="Status">
-                                    <option value="Open" >Open to Chat</option>
-                                    <option value="OpenWW">Open to Work With</option>
-                                    <option value="Busy">Busy</option>
-                                
-                                  </select>
-                                </div>
-    
-                                <div class="form-group">
-                                    <label >Notes</label>
-                                    <input type="text" class="form-control" id="notes4" placeholder="Details About Location">
-                                </div>
-    
-                                <button type="submit" name="submit" value="submit" id="submit4" onclick="addLi4();" class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
-                            </form>
-                                <!--
-                                    <li>Name (class related to select)</li>
-                                    <p> Notes </p>
-                                -->
-                            </div>
-                          </div>
+      } else if (selectPart.value === "OpenWW") {
+        liNode.className = "yellow";
+      } else {
+        liNode.className = "green";
+      }
 
 
+      if (txtVal === '' || pVal === '') {
+        alert("You must write something!");
+      } else {
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
 
-                </div>
-                <div class="col-9 locLists">
-                   
-                    <div class="row">
-                      <div class="note" id="note">
-                        <button type="button" class="btn-close close-btn " id="close-btn" onclick="handleClick()" >X</button>
-                        <span class="note-span">Remember: A green name = open to chat. A yellow name = open to work with. A red name = busy.</span>
-                    </div>
-                        <!--First Area-->
-                        <div class="col">
-                            
-                            <ul class="colorList" id="list1">
-                                <h3>First Floor</h3>
-                                
-                                <li class="red">Jane Young </li>
-                                <p >Im in the printer section.</p>
-                                <li class="yellow">Ahmed Aboudoin <p class="black">Im at the front desk.</p></li>
-                                
-                            </ul>
+      }
 
-                        </div>
-                        <!--Seconf Area-->
-                        <div class="col">
-                             
-                            <ul class="colorList" id="list2">
-                                <h3>Second Floor</h3>
-                               
-                                <li class="green">Emily Johnson <p class="black">Im right next to the back exit.</p></li>
-                                
-                                
-                            </ul>
+      // add notes
+      var pVal = document.getElementById('notes2').value,
+        listNode = document.getElementById('list2'),
+        pNode = document.createElement("P"),
+        paNode = document.createTextNode(pVal);
 
-                        </div>
-                    </div>
-                    <div class="row">
-                        
-                        <!--Third Area-->
-                        <div class="col">
-                            <ul class="colorList" id="list3" >
-                                <h3>Third Floor</h3>
-                                <li class="green">John Smith <p class="black">Find me next to the door.</p></li>
-                                
-                                
-                            </ul>
+      if (pVal === '' || txtVal === '') {
+        alert("You must write something!");
+      } else {
+        pNode.appendChild(paNode);
+        listNode.appendChild(pNode);
+      }
 
-                        </div>
-                        <!--Fourth Area-->
-                        <div class="col">
-                            <ul class="colorList" id="list4">
-                                <h3>Basement</h3>
-                                <li class="yellow">Kazi Faiz <p class="black">Find me next to the left door.</p></li>
-                                
-                               
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+    }
+    //third
+    function addLi3() {
+      //close button
+      var buttonClose = document.createElement("button");
+      var alert = document.getElementById("alert-3");
+      alert.classList.remove("d-none");
+
+      buttonClose.setAttribute("id", "close");
+      buttonClose.setAttribute("class", "close");
+      buttonClose.onclick = function () {
+        this.parentNode.removeChild(liNode);
+        this.parentNode.removeChild(pNode);
+        this.remove();
+      }
+      buttonClose.innerHTML = "X";
+
+      document.getElementById('list3').appendChild(buttonClose);
+
+      //add name 
+      var txtVal = document.getElementById('name3').value,
+        listNode = document.getElementById('list3'),
+        liNode = document.createElement("LI"),
+        txtNode = document.createTextNode(txtVal);
+
+      const selectPart = document.querySelector('#status3');
+      if (selectPart.value === "Busy") {
+        liNode.className = "red";
+
+      } else if (selectPart.value === "OpenWW") {
+        liNode.className = "yellow";
+      } else {
+        liNode.className = "green";
+      }
+
+
+      if (txtVal === '' || pVal === '') {
+        alert("You must write something!");
+      } else {
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
+
+      }
+
+      // add notes
+      var pVal = document.getElementById('notes3').value,
+        listNode = document.getElementById('list3'),
+        pNode = document.createElement("P"),
+        paNode = document.createTextNode(pVal);
+
+      if (pVal === '' || txtVal === '') {
+        alert("You must write something!");
+      } else {
+        pNode.appendChild(paNode);
+        listNode.appendChild(pNode);
+      }
+
+    }
+
+    function addLi4() {
+      //close button
+      var buttonClose = document.createElement("button");
+      var alert = document.getElementById("alert-4");
+      alert.classList.remove("d-none");
+
+      buttonClose.setAttribute("id", "close");
+      buttonClose.setAttribute("class", "close");
+      buttonClose.onclick = function () {
+        this.parentNode.removeChild(liNode);
+        this.parentNode.removeChild(pNode);
+        this.remove();
+      }
+      buttonClose.innerHTML = "X";
+
+      document.getElementById('list4').appendChild(buttonClose);
+
+      //add name 
+      var txtVal = document.getElementById('name4').value,
+        listNode = document.getElementById('list4'),
+        liNode = document.createElement("LI"),
+        txtNode = document.createTextNode(txtVal);
+
+      const selectPart = document.querySelector('#status4');
+      if (selectPart.value === "Busy") {
+        liNode.className = "red";
+
+      } else if (selectPart.value === "OpenWW") {
+        liNode.className = "yellow";
+      } else {
+        liNode.className = "green";
+      }
+
+
+      if (txtVal === '' || pVal === '') {
+        alert("You must write something!");
+      } else {
+        liNode.appendChild(txtNode);
+        listNode.appendChild(liNode);
+
+      }
+
+      // add notes
+      var pVal = document.getElementById('notes4').value,
+        listNode = document.getElementById('list4'),
+        pNode = document.createElement("P"),
+        paNode = document.createTextNode(pVal);
+
+      if (pVal === '' || txtVal === '') {
+        alert("You must write something!");
+      } else {
+        pNode.appendChild(paNode);
+        listNode.appendChild(pNode);
+      }
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <div class="container third-page">
+    <div class="row ">
+      <div class="col">
+        <nav class="navbar navbar-light  ">
+          <a class="btn btn-primary back-buttn" href="pickLocation.html" role="button">Back</a>
+          <h2 class="sub-title">The Library</h2>
+          <a class="navbar-brand h1" href="./index.html"> <a class="navbar-brand h1" href="./index.html"><img
+                src="./img/logo.png" class="img-fluid float-right small-logo " alt="Responsive image"></a></a>
+        </nav>
+      </div>
+    </div>
+    <div class="row longRow">
+      <div class="col-3 sidebar">
+        <!--Sidebar-->
+        <h3 class="sub-title">Campus Adder</h3>
+        <br />
+        <p>
+          <button class="btn btn-primary back-buttn" type="button" data-toggle="collapse" data-target="#collapseHowto"
+            aria-expanded="false" aria-controls="collapseExample">
+            How to Use ▼
+          </button>
+        </p>
+        <div class="collapse" id="collapseHowto">
+          <div class="card card-body ">
+            <p> Find four floors of the library availible below. Click on the floor your currently located and fill out
+              the form
+              to notify your peers of your name, you status, and more details of your location on the floor. Once you
+              submit you can delete yourself from the map
+              by pressing the "X" next to your submission.
+            <p class="green">Green Status</p> Means the user is open to chat.
+            <p class="yellow">Yellow Status</p> Means a user is open to work together.
+            <p class="red">Red Status</p> Means a user is busy, best not to approach.
+            </p>
+          </div>
         </div>
-    </body>    
-</html>    
+
+
+        <!--First floor button-->
+        <p>
+          <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea1"
+            aria-expanded="false" aria-controls="collapseExample">
+            Library: First Floor ▼
+          </button>
+        </p>
+        <div class="collapse" id="collapseArea1">
+          <div class="card card-body">
+            <div class="alert alert-success alert-dismissible d-none" id="alert-1">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Add Success!</strong>
+            </div>
+            <form id="form1">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" id="name1" placeholder="Preferred Name">
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select class="form-control" id="status1" name="Status">
+                  <option value="Open">Open to Chat</option>
+                  <option value="OpenWW">Open to Work With</option>
+                  <option value="Busy">Busy</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Notes</label>
+                <input type="text" class="form-control" id="notes1" placeholder="Details About Location">
+              </div>
+              <button type="submit" name="submit" value="submit1" id="submit1" onclick="addLi();"
+                class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+            </form>
+
+          </div>
+        </div>
+        <!--Second floor button-->
+        <p>
+          <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea2"
+            aria-expanded="false" aria-controls="collapseExample">
+            Library: Second Floor ▼
+          </button>
+        </p>
+        <div class="collapse" id="collapseArea2">
+          <div class="card card-body">
+            <div class="alert alert-success alert-dismissible d-none" id="alert-2">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Add Success!</strong>
+            </div>
+            <form id="form2">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" id="name2" placeholder="Preferred Name">
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select class="form-control" id="status2" name="Status">
+                  <option value="Open">Open to Chat</option>
+                  <option value="OpenWW">Open to Work With</option>
+                  <option value="Busy">Busy</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Notes</label>
+                <input type="text" class="form-control" id="notes2" placeholder="Details About Location">
+              </div>
+              <button type="submit" name="submit" value="submit" id="submit2" onclick="addLi2();"
+                class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+            </form>
+          </div>
+        </div>
+        <!--Third floor button-->
+        <p>
+          <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea3"
+            aria-expanded="false" aria-controls="collapseExample">
+            Library: Third Floor ▼
+          </button>
+        </p>
+        <div class="collapse" id="collapseArea3">
+          <div class="card card-body">
+            <div class="alert alert-success alert-dismissible d-none" id="alert-3">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Add Success!</strong>
+            </div>
+            <form id="form3">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" id="name3" placeholder="Preferred Name">
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select class="form-control" id="status3" name="Status">
+                  <option value="Open">Open to Chat</option>
+                  <option value="OpenWW">Open to Work With</option>
+                  <option value="Busy">Busy</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Notes</label>
+                <input type="text" class="form-control" id="notes3" placeholder="Details About Location">
+              </div>
+              <button type="submit" name="submit" value="submit" id="submit3" onclick="addLi3();"
+                class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+            </form>
+
+          </div>
+        </div>
+        <!--Fourth floor button-->
+        <p>
+          <button class="btn btn-primary collapseArea" type="button" data-toggle="collapse" data-target="#collapseArea4"
+            aria-expanded="false" aria-controls="collapseExample">
+            Library: Basement ▼
+          </button>
+        </p>
+        <div class="collapse" id="collapseArea4">
+          <div class="card card-body">
+            <div class="alert alert-success alert-dismissible d-none" id="alert-4">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Add Success!</strong>
+            </div>
+            <form id="form4">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" id="name4" placeholder="Preferred Name">
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <select class="form-control" id="status4" name="Status">
+                  <option value="Open">Open to Chat</option>
+                  <option value="OpenWW">Open to Work With</option>
+                  <option value="Busy">Busy</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Notes</label>
+                <input type="text" class="form-control" id="notes4" placeholder="Details About Location">
+              </div>
+              <button type="submit" name="submit" value="submit" id="submit4" onclick="addLi4();"
+                class="btn btn-primary red-button"><Em>Enter into the Map</Em></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-9 locLists">
+        <div class="row">
+          <div class="note" id="note">
+            <button type="button" class="btn-close close-btn " id="close-btn" onclick="handleClick()">X</button>
+            <span class="note-span">Remember: A green name = open to chat. A yellow name = open to work with. A red name
+              = busy.</span>
+          </div>
+          <!--First Area-->
+          <div class="col">
+
+            <ul class="colorList" id="list1">
+              <h3>First Floor</h3>
+
+              <li class="red">Jane Young </li>
+              <p>Im in the printer section.</p>
+              <li class="yellow">Ahmed Aboudoin <p class="black">Im at the front desk.</p>
+              </li>
+
+            </ul>
+
+          </div>
+          <!--Seconf Area-->
+          <div class="col">
+
+            <ul class="colorList" id="list2">
+              <h3>Second Floor</h3>
+
+              <li class="green">Emily Johnson <p class="black">Im right next to the back exit.</p>
+              </li>
+
+
+            </ul>
+
+          </div>
+        </div>
+        <div class="row">
+
+          <!--Third Area-->
+          <div class="col">
+            <ul class="colorList" id="list3">
+              <h3>Third Floor</h3>
+              <li class="green">John Smith <p class="black">Find me next to the door.</p>
+              </li>
+
+
+            </ul>
+
+          </div>
+          <!--Fourth Area-->
+          <div class="col">
+            <ul class="colorList" id="list4">
+              <h3>Basement</h3>
+              <li class="yellow">Kazi Faiz <p class="black">Find me next to the left door.</p>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
