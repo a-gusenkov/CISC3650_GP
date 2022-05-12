@@ -34,10 +34,10 @@
         evt.preventDefault();
       });
 
-      $('#collapseAreaBtn1').on('click', function () { console.log("area 1 called"); closeOtherCollapse('area1') })
-      $('#collapseAreaBtn2').on('click', function () { console.log("area 2 called"); closeOtherCollapse('area2') })
-      $('#collapseAreaBtn3').on('click', function () { console.log("area 3 called"); closeOtherCollapse('area3') })
-      $('#collapseAreaBtn4').on('click', function () { console.log("area 4 called"); closeOtherCollapse('area4') })
+      $('#collapseAreaBtn1').on('click', function () { closeOtherCollapse('area1') })
+      $('#collapseAreaBtn2').on('click', function () { closeOtherCollapse('area2') })
+      $('#collapseAreaBtn3').on('click', function () { closeOtherCollapse('area3') })
+      $('#collapseAreaBtn4').on('click', function () { closeOtherCollapse('area4') })
     }
 
     function closeOtherCollapse(currentCollapse) {
@@ -58,231 +58,173 @@
     }
 
     function addLi() {
-      //close button
-      var buttonClose = document.createElement("button");
-      var alert = document.getElementById("alert-1");
-      alert.classList.remove("d-none");
+      var listElement = document.createElement("li")
+      var nameVal = document.getElementById('name1').value
+      var name = document.createTextNode(nameVal)
+      var noteVal = document.getElementById('notes1').value
+      var note = document.createElement("p")
+      note.classList.add('black')
 
+      if (!nameVal || !noteVal) {
+        window.alert("You must write something!");
+        return;
+      }
+
+      var buttonClose = document.createElement("button");
       buttonClose.setAttribute("id", "close");
       buttonClose.setAttribute("class", "close");
-      buttonClose.onclick = function () {
-        this.parentNode.removeChild(liNode);
-        this.parentNode.removeChild(pNode);
-        this.remove();
-      }
       buttonClose.innerHTML = "X";
 
-      document.getElementById('list1').appendChild(buttonClose);
-
-      //add name 
-      var txtVal = document.getElementById('name1').value,
-        listNode = document.getElementById('list1'),
-        liNode = document.createElement("LI"),
-        txtNode = document.createTextNode(txtVal);
+      buttonClose.onclick = function () {
+        listElement.remove();
+      }
 
       const selectPart = document.querySelector('#status1');
       if (selectPart.value === "Busy") {
-        liNode.className = "red";
-
+        listElement.className = "red";
       } else if (selectPart.value === "OpenWW") {
-        liNode.className = "yellow";
+        listElement.className = "yellow";
       } else {
-        liNode.className = "green";
+        listElement.className = "green";
       }
 
+      note.appendChild(document.createTextNode(noteVal));
 
-      if (txtVal === '' || pVal === '') {
-        alert("You must write something!");
-      } else {
-        liNode.appendChild(txtNode);
-        listNode.appendChild(liNode);
-      }
+      listElement.appendChild(buttonClose);
+      listElement.appendChild(name)
+      listElement.appendChild(note);
 
-      // add notes
-      var pVal = document.getElementById('notes1').value,
-        listNode = document.getElementById('list1'),
-        pNode = document.createElement("P"),
-        paNode = document.createTextNode(pVal);
+      document.getElementById('list1').appendChild(listElement);
 
-      if (pVal === '' || txtVal === '') {
-        alert("You must write something!");
-      } else {
-        pNode.appendChild(paNode);
-        listNode.appendChild(pNode);
-      }
-
+      var alert = document.getElementById("alert-1");
+      alert.classList.remove("d-none");
     }
 
     //second form
     function addLi2() {
-      //close button
+      var listElement = document.createElement("li")
+      var nameVal = document.getElementById('name2').value
+      var name = document.createTextNode(nameVal)
       var buttonClose = document.createElement("button");
-      var alert = document.getElementById("alert-2");
-      alert.classList.remove("d-none");
+      var noteVal = document.getElementById('notes2').value
+      var note = document.createElement("p")
+      note.classList.add('black')
+
+      if (!nameVal || !noteVal) {
+        window.alert("You must write something!");
+        return;
+      }
 
       buttonClose.setAttribute("id", "close");
       buttonClose.setAttribute("class", "close");
-      buttonClose.onclick = function () {
-        this.parentNode.removeChild(liNode);
-        this.parentNode.removeChild(pNode);
-        this.remove();
-      }
       buttonClose.innerHTML = "X";
-
-      document.getElementById('list2').appendChild(buttonClose);
-
-      //add name 
-      var txtVal = document.getElementById('name2').value,
-        listNode = document.getElementById('list2'),
-        liNode = document.createElement("LI"),
-        txtNode = document.createTextNode(txtVal);
+      buttonClose.onclick = function () {
+        listElement.remove();
+      }
 
       const selectPart = document.querySelector('#status2');
       if (selectPart.value === "Busy") {
-        liNode.className = "red";
-
+        listElement.className = "red";
       } else if (selectPart.value === "OpenWW") {
-        liNode.className = "yellow";
+        listElement.className = "yellow";
       } else {
-        liNode.className = "green";
+        listElement.className = "green";
       }
 
+      note.appendChild(document.createTextNode(noteVal));
 
-      if (txtVal === '' || pVal === '') {
-        alert("You must write something!");
-      } else {
-        liNode.appendChild(txtNode);
-        listNode.appendChild(liNode);
+      listElement.appendChild(buttonClose);
+      listElement.appendChild(name)
+      listElement.appendChild(note);
 
-      }
+      document.getElementById('list2').appendChild(listElement);
 
-      // add notes
-      var pVal = document.getElementById('notes2').value,
-        listNode = document.getElementById('list2'),
-        pNode = document.createElement("P"),
-        paNode = document.createTextNode(pVal);
-
-      if (pVal === '' || txtVal === '') {
-        alert("You must write something!");
-      } else {
-        pNode.appendChild(paNode);
-        listNode.appendChild(pNode);
-      }
-
+      var alert = document.getElementById("alert-2");
+      alert.classList.remove("d-none");
     }
     //third
     function addLi3() {
-      //close button
+      var listElement = document.createElement("li")
+      var nameVal = document.getElementById('name3').value
+      var name = document.createTextNode(nameVal)
       var buttonClose = document.createElement("button");
-      var alert = document.getElementById("alert-3");
-      alert.classList.remove("d-none");
+      var noteVal = document.getElementById('notes3').value
+      var note = document.createElement("p")
+      note.classList.add('black')
+
+      if (!nameVal || !noteVal) {
+        window.alert("You must write something!");
+        return;
+      }
 
       buttonClose.setAttribute("id", "close");
       buttonClose.setAttribute("class", "close");
-      buttonClose.onclick = function () {
-        this.parentNode.removeChild(liNode);
-        this.parentNode.removeChild(pNode);
-        this.remove();
-      }
       buttonClose.innerHTML = "X";
-
-      document.getElementById('list3').appendChild(buttonClose);
-
-      //add name 
-      var txtVal = document.getElementById('name3').value,
-        listNode = document.getElementById('list3'),
-        liNode = document.createElement("LI"),
-        txtNode = document.createTextNode(txtVal);
+      buttonClose.onclick = function () {
+        listElement.remove();
+      }
 
       const selectPart = document.querySelector('#status3');
       if (selectPart.value === "Busy") {
-        liNode.className = "red";
-
+        listElement.className = "red";
       } else if (selectPart.value === "OpenWW") {
-        liNode.className = "yellow";
+        listElement.className = "yellow";
       } else {
-        liNode.className = "green";
+        listElement.className = "green";
       }
 
+      note.appendChild(document.createTextNode(noteVal));
 
-      if (txtVal === '' || pVal === '') {
-        alert("You must write something!");
-      } else {
-        liNode.appendChild(txtNode);
-        listNode.appendChild(liNode);
+      listElement.appendChild(buttonClose);
+      listElement.appendChild(name)
+      listElement.appendChild(note);
 
-      }
+      document.getElementById('list3').appendChild(listElement);
 
-      // add notes
-      var pVal = document.getElementById('notes3').value,
-        listNode = document.getElementById('list3'),
-        pNode = document.createElement("P"),
-        paNode = document.createTextNode(pVal);
-
-      if (pVal === '' || txtVal === '') {
-        alert("You must write something!");
-      } else {
-        pNode.appendChild(paNode);
-        listNode.appendChild(pNode);
-      }
-
+      var alert = document.getElementById("alert-3");
+      alert.classList.remove("d-none");
     }
 
     function addLi4() {
-      //close button
+      var listElement = document.createElement("li")
+      var nameVal = document.getElementById('name4').value
+      var name = document.createTextNode(nameVal)
       var buttonClose = document.createElement("button");
-      var alert = document.getElementById("alert-4");
-      alert.classList.remove("d-none");
+      var noteVal = document.getElementById('notes4').value
+      var note = document.createElement("p")
+      note.classList.add('black')
+
+      if (!nameVal || !noteVal) {
+        window.alert("You must write something!");
+        return;
+      }
 
       buttonClose.setAttribute("id", "close");
       buttonClose.setAttribute("class", "close");
-      buttonClose.onclick = function () {
-        this.parentNode.removeChild(liNode);
-        this.parentNode.removeChild(pNode);
-        this.remove();
-      }
       buttonClose.innerHTML = "X";
-
-      document.getElementById('list4').appendChild(buttonClose);
-
-      //add name 
-      var txtVal = document.getElementById('name4').value,
-        listNode = document.getElementById('list4'),
-        liNode = document.createElement("LI"),
-        txtNode = document.createTextNode(txtVal);
+      buttonClose.onclick = function () {
+        listElement.remove();
+      }
 
       const selectPart = document.querySelector('#status4');
       if (selectPart.value === "Busy") {
-        liNode.className = "red";
-
+        listElement.className = "red";
       } else if (selectPart.value === "OpenWW") {
-        liNode.className = "yellow";
+        listElement.className = "yellow";
       } else {
-        liNode.className = "green";
+        listElement.className = "green";
       }
 
+      note.appendChild(document.createTextNode(noteVal));
 
-      if (txtVal === '' || pVal === '') {
-        alert("You must write something!");
-      } else {
-        liNode.appendChild(txtNode);
-        listNode.appendChild(liNode);
+      listElement.appendChild(buttonClose);
+      listElement.appendChild(name)
+      listElement.appendChild(note);
 
-      }
+      document.getElementById('list4').appendChild(listElement);
 
-      // add notes
-      var pVal = document.getElementById('notes4').value,
-        listNode = document.getElementById('list4'),
-        pNode = document.createElement("P"),
-        paNode = document.createTextNode(pVal);
-
-      if (pVal === '' || txtVal === '') {
-        alert("You must write something!");
-      } else {
-        pNode.appendChild(paNode);
-        listNode.appendChild(pNode);
-      }
-
+      var alert = document.getElementById("alert-4");
+      alert.classList.remove("d-none");
     }
 
   </script>
