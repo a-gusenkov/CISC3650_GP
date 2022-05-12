@@ -97,7 +97,7 @@
       } else {
         listElement.className = "green";
       }
-
+      listElement.className = "colorListItem";
       note.appendChild(document.createTextNode(noteVal));
 
       listElement.appendChild(buttonClose);
@@ -261,11 +261,14 @@
         </p>
         <div class="collapse" id="collapseHowto">
           <div class="card card-body ">
-            <p> Find four floors of the library availible below. Click on the floor your currently located and fill out
-              the form
-              to notify your peers of your name, you status, and more details of your location on the floor. Once you
-              submit you can delete yourself from the map
-              by pressing the "X" next to your submission.
+            <ul>
+              <li>Click on the floor your currently located.</li>
+              <li>Fill out
+                the form (name, you status, and more details of your location on the floor).</li>
+              <li>Can delete yourself from the map
+                by pressing the "X" next to your submission.</li> 
+            </ul>
+            <p>
             <p class="green">Green Status</p> Means the user is open to chat.
             <p class="yellow">Yellow Status</p> Means a user is open to work together.
             <p class="red">Red Status</p> Means a user is busy, best not to approach.
